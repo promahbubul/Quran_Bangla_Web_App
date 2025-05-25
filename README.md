@@ -1,12 +1,18 @@
-# React + Vite
+# Quran Bangla Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Quran bangla web app is Al Quran bangla translatation version. you can easily read quran in arabic and bengali language.
 
-Currently, two official plugins are available:
+<a href="[quran-bangla.vercel.app/](https://quran-bangla.vercel.app/)">Go to Website</a>
+<a href="https://quran-bangla.vercel.app/"><img src="./demo.png" /></a>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Select your sura and read sura in bangla and arabic
+- Arabic language fonts are more readable
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technology used
+
+- React , Vite
+- React router dom
+- React ICons
+- Third party Quran API `https://alquran.cloud/api`
