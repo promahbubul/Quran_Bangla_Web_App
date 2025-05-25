@@ -7,7 +7,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <DashboardLayout />,
-    loader: () => fetch("http://api.alquran.cloud/v1/surah"),
+    loader: () => fetch("https://api.alquran.cloud/v1/surah"),
     errorElement: <ErrorPage />,
     children: [
       { path: "", element: <HomePage /> },
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
         path: "/surah/:surahNumber",
         element: <SingleSurah />,
         loader: ({ params }) =>
-          fetch(`http://api.alquran.cloud/v1/surah/${params.surahNumber}`),
+          fetch(`https://api.alquran.cloud/v1/surah/${params.surahNumber}`),
       },
     ],
   },
