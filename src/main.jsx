@@ -8,7 +8,10 @@ import SurahProvider from "./context/SurahProvider";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <SurahProvider>
-      <RouterProvider router={router} />
+      <RouterProvider
+        router={router}
+        fallbackElement={<p>Loading...</p>} // ✅ important for SSR + hydration
+      />
     </SurahProvider>
   </StrictMode>
 );
