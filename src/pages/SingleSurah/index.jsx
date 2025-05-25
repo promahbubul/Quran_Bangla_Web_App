@@ -4,7 +4,6 @@ import Ayath from "../../components/SingleSurah/Ayath";
 
 const SingleSurah = () => {
   const surah = useLoaderData().data;
-  //   console.log(surah);
   
   return (
     <div className="w-9/12 p-5 h-[calc(100vh-98px)]  ">
