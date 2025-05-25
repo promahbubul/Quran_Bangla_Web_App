@@ -14,7 +14,7 @@ const Ayath = ({ ayath }) => {
       if (cached) {
         setBanglaAyath(cached);
       } else {
-        fetch(`/api/ayah/${ayath?.number}/bn.bengali`)
+        fetch(`http://api.alquran.cloud/v1/ayah/${ayath?.number}/bn.bengali`)
           .then((res) => res.json())
           .then((data) => {
             banglaAyahCache[ayath.number] = data.data;
