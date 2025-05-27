@@ -76,7 +76,7 @@ const Ayath = ({ ayath }) => {
         <h4 className="text-right md:h-10 md:w-10 font-thin text-sm md:text-base md:bg-blue rounded-full flex justify-center items-center text-blue md:text-white">
           {ayath?.numberInSurah}
         </h4>
-        <p className="font-noorehuda max-w-11/12 text-3xl font-normal text-right ">
+        <p className="font-noorehuda max-w-11/12 text-2xl md:text-3xl font-normal text-right ">
           {ayath.text}
         </p>
       </div>

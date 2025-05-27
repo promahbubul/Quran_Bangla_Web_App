@@ -6,7 +6,7 @@ const SingleSurah = () => {
   const surah = useLoaderData().data;
   
   return (
-    <div className="w-full md:w-9/12 p-2 md:p-5 h-[calc(100vh-98px)]  ">
+    <div className="w-full md:w-9/12 p-2 md:p-5 h-[calc(100%-114px)]  ">
       <Header
         ayath={surah?.numberOfAyahs}
         surahNumber={surah?.number}
@@ -14,7 +14,7 @@ const SingleSurah = () => {
         englishName={surah?.englishName}
         meanning={surah?.englishNameTranslation}
       />
-      <div className="h-[calc(100%-244px)]  md:h-[calc(100%-122px)] overflow-y-auto">
+      <div className="h-[calc(100%-86px)]  md:h-[calc(100%-122px)] overflow-y-auto">
         {surah?.ayahs?.map((ayath) => (
           <Ayath key={ayath?.number} ayath={ayath} />
         ))}

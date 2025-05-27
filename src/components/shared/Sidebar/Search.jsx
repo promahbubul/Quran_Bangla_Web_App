@@ -2,7 +2,7 @@ import { IoSearch } from "react-icons/io5";
 
 const Search = () => {
   return (
-    <div className="mb-3 md:mb-5 rounded-md relative w-full bg-[#f1f1f1]">
+    <div className="mb-1 md:mb-5 rounded-md relative w-full bg-[#f1f1f1]">
       <input
         type="text"
         className=" w-full border-0 outline-0 p-2 placeholder:text-[#a3a3a3] pl-10"
