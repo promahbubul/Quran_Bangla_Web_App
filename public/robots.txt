@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alquran-bangla-web-app.vercel.app/sitemap.xml
