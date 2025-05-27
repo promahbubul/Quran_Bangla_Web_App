@@ -6,7 +6,7 @@ const SingleSurah = () => {
   const surah = useLoaderData().data;
   
   return (
-    <div className="w-full md:w-9/12 p-2 md:p-5 h-[calc(100%-114px)]  ">
+    <div className="w-full md:w-9/12 p-2 md:p-5 h-[calc(100%-114px)] md:h-full  ">
       <Header
         ayath={surah?.numberOfAyahs}
         surahNumber={surah?.number}

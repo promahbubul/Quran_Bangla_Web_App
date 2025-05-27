@@ -1,9 +1,14 @@
+import { useContext } from "react";
 import { IoSearch } from "react-icons/io5";
+import { SurahContext } from "../../../context/SurahProvider";
 
 const Search = () => {
+  const { handleSearchQurah } = useContext(SurahContext);
+
   return (
     <div className="mb-1 md:mb-5 rounded-md relative w-full bg-[#f1f1f1]">
       <input
+        onChange={(e) => handleSearchQurah(e.target.value)}
         type="text"
         className=" w-full border-0 outline-0 p-2 placeholder:text-[#a3a3a3] pl-10"
         placeholder="Search Surah"
@@ -13,5 +18,5 @@ const Search = () => {
       </button>
     </div>
   );
-}
-export default Search
+};
+export default Search;

@@ -73,7 +73,7 @@ const Ayath = ({ ayath }) => {
       </button>
 
       <div className="flex flex-row items-end md:items-center justify-end gap-2 md:gap-5 mb-5">
-        <h4 className="text-right md:h-10 md:w-10 font-thin text-sm md:text-base md:bg-blue rounded-full flex justify-center items-center text-blue md:text-white">
+        <h4 className="text-right  font-thin md:font-normal text-sm md:text-base  rounded-full flex justify-center items-center text-blue ">
           {ayath?.numberInSurah}
         </h4>
         <p className="font-noorehuda max-w-11/12 text-2xl md:text-3xl font-normal text-right ">
