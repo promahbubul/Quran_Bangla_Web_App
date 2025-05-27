@@ -4,10 +4,9 @@ import Surah from "./Surah";
 
 const SurahList = () => {
   const { surahs } = useContext(SurahContext);
-
-  console.log("Surah Length;:", surahs.length);
   return (
     <div className="space-y-2 md:h-[calc(100%-60px)]  flex flex-row gap-1 md:gap-2 md:flex-col overflow-y-auto">
+      
       {surahs?.length > 0 ? (
         surahs?.map((surah) => <Surah key={surah?.number} surah={surah} />)
       ) : (

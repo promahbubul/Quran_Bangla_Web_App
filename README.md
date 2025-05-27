@@ -7,7 +7,11 @@ Quran bangla web app is Al Quran bangla translatation version. you can easily re
 
 ## Features
 
-- Select your sura and read sura in bangla and arabic
+- All surah in simple arabic language
+- Arabic to Bangla 
+- Single Ayat audio
+- Full Surah Audio
+- Search surah by surah number
 - Arabic language fonts are more readable
 
 ## Technology used

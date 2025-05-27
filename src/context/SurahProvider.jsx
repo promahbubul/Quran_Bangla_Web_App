@@ -1,17 +1,14 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { createContext } from "react";
-import { data } from "react-router-dom";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const SurahContext = createContext(null);
 
 const SurahProvider = ({ children }) => {
   const [surahs, setSurahs] = useState([]);
-  // const surahList = useLoaderData();
 
   const handleSearchQurah = (surahNumber) => {
-    // console.log(surahNumber);
     if (surahNumber) {
       fetch(`https://api.alquran.cloud/v1/surah/${surahNumber}/quran-simple`)
         .then((res) => res.json())
@@ -21,7 +18,7 @@ const SurahProvider = ({ children }) => {
           }
           setSurahs([]);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => console.error(err));
     } else {
       fetch("https://api.alquran.cloud/v1/surah")
         .then((res) => res.json())

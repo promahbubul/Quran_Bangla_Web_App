@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { FaPlayCircle, FaPauseCircle } from "react-icons/fa";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const banglaAyahCache = {};
 
@@ -65,6 +66,11 @@ const Ayath = ({ ayath }) => {
 
   return (
     <div ref={ref} className="border-b border-b-silver p-3 md:p-5 relative">
+      <div className="">
+        <Helmet>
+          <meta name="description" content={`${ayath.text}}`} />
+        </Helmet>
+      </div>
       <button
         onClick={handlePlayPause}
         className="text text-lg md:text-3xl font-bold absolute  top-3 md:top-5 left-1 md:left-3 cursor-pointer text-blue"
