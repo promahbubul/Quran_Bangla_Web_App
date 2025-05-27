@@ -15,7 +15,9 @@ const router = createBrowserRouter([
         path: "/surah/:surahNumber",
         element: <SingleSurah />,
         loader: ({ params }) =>
-          fetch(`https://api.alquran.cloud/v1/surah/${params.surahNumber}`),
+          fetch(
+            `https://api.alquran.cloud/v1/surah/${params.surahNumber}/quran-simple`
+          ), // 1/ar.alafasy
       },
     ],
   },

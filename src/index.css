@@ -1,10 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Noto+Naskh+Arabic:wght@400..700&family=Noto+Serif+Bengali:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
+@font-face {
+  font-family: noorehuda;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/fonts/noorehuda_Regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: alquran_indopak;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/alquran_indopak.ttf") format("ttf");
+}
+@font-face {
+  font-family: muhammadibold;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/MUHAMMADIBold.ttf") format("ttf");
+}
+
 @theme {
   --font-roboto: "Roboto", sans-serif;
   --font-amiriQuran: "Amiri Quran", serif;
   --font-notoNaskhArebic: "Noto Naskh Arabic", serif;
+  --font-noorehuda: "noorehuda", serif;
+  --font-muhammadibold: "muhammadibold", serif;
+  --font-indopak: "alquran_indopak", serif;
   --font-notoSerifBengali: "Noto Serif Bengali", serif;
 
   --color-blue: #268cfc;

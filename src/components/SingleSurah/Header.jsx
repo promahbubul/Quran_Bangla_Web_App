@@ -14,7 +14,7 @@ const Header = ({ name, englishName, ayath, meanning, surahNumber }) => {
       .then(({ data }) => {
         setSuraAudio(data?.data?.ayahs.map((a) => a.audio));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   }, [surahNumber]);
 
   useEffect(() => {
@@ -59,26 +59,26 @@ const Header = ({ name, englishName, ayath, meanning, surahNumber }) => {
   };
 
   return (
-    <div className="from-blue/0 relative to-blue/40 bg-gradi rounded-md border border-blue bg-gradient-to-br font-roboto p-5 font-semibold w-full mb-1 flex flex-row items-center justify-between">
+    <div className="from-blue/0 relative to-blue/40 bg-gradi rounded-md border border-blue bg-gradient-to-br font-roboto p-3 md:p-5 font-semibold w-full mb-1 flex flex-row items-center justify-between">
       <div>
-        <h1 className="text-xl">
+        <h1 className="text-lg md:text-xl">
           {englishName} -{" "}
-          <span className="font-notoNaskhArebic text-3xl font-bold text-blue">
+          <span className="font-notoNaskhArebic text-2xl md:text-3xl font-bold text-blue">
             {name}
           </span>
         </h1>
-        <p className="text-gray font-normal text-base">
+        <p className="text-gray font-normal text-sm md:text-base">
           {meanning} - {ayath}
         </p>
       </div>
       <button
         onClick={handlePlayPause}
-        className="text text-6xl font-bold absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 cursor-pointer text-white"
+        className="text text-3xl md:text-6xl font-bold absolute top-1/2 -translate-y-1/2 right-1 md:right-auto md:left-1/2 -translate-x-1/2 cursor-pointer text-white"
       >
         {isPlaying ? <FaPauseCircle /> : <FaPlayCircle />}
       </button>
 
-      <h1 className="w-12 h-12 rounded-md bg-blue text-2xl text-white justify-center items-center flex">
+      <h1 className="w-12 h-12 rounded-md bg-blue text-2xl text-white justify-center items-center hidden md:flex">
         {surahNumber}
       </h1>
     </div>

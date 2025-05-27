@@ -40,7 +40,7 @@ const Ayath = ({ ayath }) => {
       audioRef.current = new Audio(ayathAudio.audio);
 
       audioRef.current.addEventListener("ended", () => {
-        setIsPlaying(false); 
+        setIsPlaying(false);
       });
     }
     return () => {
@@ -64,25 +64,25 @@ const Ayath = ({ ayath }) => {
   };
 
   return (
-    <div ref={ref} className="border-b border-b-silver p-5 relative">
+    <div ref={ref} className="border-b border-b-silver p-3 md:p-5 relative">
       <button
         onClick={handlePlayPause}
-        className="text text-3xl font-bold absolute top-5 left-3 cursor-pointer text-blue"
+        className="text text-lg md:text-3xl font-bold absolute  top-3 md:top-5 left-1 md:left-3 cursor-pointer text-blue"
       >
         {isPlaying ? <FaPauseCircle /> : <FaPlayCircle />}
       </button>
 
-      <div className="flex flex-row items-center justify-end gap-5 mb-5">
-        <h4 className="text-right h-10 w-10 font-thin text-base bg-blue rounded-full flex justify-center items-center text-white">
+      <div className="flex flex-row items-end md:items-center justify-end gap-2 md:gap-5 mb-5">
+        <h4 className="text-right md:h-10 md:w-10 font-thin text-sm md:text-base md:bg-blue rounded-full flex justify-center items-center text-blue md:text-white">
           {ayath?.numberInSurah}
         </h4>
-        <p className="font-amiriQuran max-w-11/12 text-3xl font-extrabold text-right leading-loose">
+        <p className="font-noorehuda max-w-11/12 text-3xl font-normal text-right ">
           {ayath.text}
         </p>
       </div>
 
       <div>
-        <p className="font-notoSerifBengali text-xl font-medium">
+        <p className="font-notoSerifBengali text-base md:text-xl font-normal md:font-medium">
           {banglaAyath?.text || "Loading translation..."}
         </p>
       </div>
