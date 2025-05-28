@@ -103,12 +103,12 @@ const Header = ({
           {meanning} - {ayath}
         </p>
       </div>
-      <button
+      {/* <button
         onClick={handlePlayPause}
         className="text text-3xl md:text-6xl font-bold absolute top-1/2 -translate-y-1/2 right-1 md:right-auto md:left-1/2 -translate-x-1/2 cursor-pointer text-white"
       >
         {isPlaying ? <FaPauseCircle /> : <FaPlayCircle />}
-      </button>
+      </button> */}
 
       <h1 className="w-12 h-12 rounded-md bg-blue text-2xl text-white justify-center items-center hidden md:flex">
         {surahNumber}

@@ -45,7 +45,7 @@ const Ayath = ({
         <meta name="description" content={`${ayath.text}`} />
       </Helmet>
 
-      <audio
+      {/* <audio
         ref={audioRef}
         src={audio}
         controls
@@ -53,7 +53,7 @@ const Ayath = ({
         onPlay={handlePlay}
         onPause={handlePause}
         onEnded={handlePause}
-      />
+      /> */}
 
       <div className="flex flex-row items-end md:items-center justify-end gap-2 md:gap-5 mb-5">
         <h4 className="text-right font-thin md:font-normal text-sm md:text-base text-blue">
