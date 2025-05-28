@@ -14,10 +14,26 @@ const router = createBrowserRouter([
       {
         path: "/surah/:surahNumber",
         element: <SingleSurah />,
-        loader: ({ params }) =>
-          fetch(
-            `https://api.alquran.cloud/v1/surah/${params.surahNumber}/quran-simple`
-          ), // 1/ar.alafasy
+        loader: async ({ params }) => {
+          const [arabicSurah, audioSurah, banglaSurah] = await Promise.all([
+            fetch(
+              `https://api.alquran.cloud/v1/surah/${params.surahNumber}/quran-simple`
+            ),
+            fetch(
+              `https://api.alquran.cloud/v1/surah/${params.surahNumber}/ar.alafasy`
+            ),
+            fetch(
+              `https://api.alquran.cloud/v1/surah/${params.surahNumber}/bn.bengali`
+            ),
+          ]);
+          if (!arabicSurah.ok || !audioSurah.ok) {
+            throw new Response("Failed to load surah data", { status: 500 });
+          }
+          const audio = await audioSurah.json();
+          const surah = await arabicSurah.json();
+          const bangla = await banglaSurah.json();
+          return { surah, audio, bangla };
+        },
       },
     ],
   },

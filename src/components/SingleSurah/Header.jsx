@@ -2,7 +2,16 @@ import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { FaPauseCircle, FaPlayCircle } from "react-icons/fa";
 
-const Header = ({ name, englishName, ayath, meanning, surahNumber }) => {
+const Header = ({
+  name,
+  englishName,
+  ayath,
+  meanning,
+  surahNumber,
+  onPlay,
+  onPause,
+  playingAudio,
+}) => {
   const [suraAudio, setSuraAudio] = useState([]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,26 +29,49 @@ const Header = ({ name, englishName, ayath, meanning, surahNumber }) => {
   useEffect(() => {
     if (isPlaying && suraAudio.length > 0) {
       playAudio(currentIndex);
+    } else {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
     }
 
+    // Cleanup on unmount
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current = null;
       }
     };
-  }, [isPlaying, currentIndex]);
+  }, [isPlaying, currentIndex, suraAudio]);
+
+  useEffect(() => {
+    // If another audio (Ayath) started playing, pause header audio
+    if (playingAudio !== "header") {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        setIsPlaying(false);
+      }
+    }
+  }, [playingAudio]);
 
   const playAudio = (index) => {
     if (index >= suraAudio.length) {
       setIsPlaying(false);
+      if (onPause) onPause();
       return;
+    }
+
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current = null;
     }
 
     const audio = new Audio(suraAudio[index]);
     audioRef.current = audio;
 
     audio.play();
+    if (onPlay) onPlay(audio);
+
     audio.addEventListener("ended", () => {
       setCurrentIndex((prev) => prev + 1);
     });
@@ -47,11 +79,11 @@ const Header = ({ name, englishName, ayath, meanning, surahNumber }) => {
 
   const handlePlayPause = () => {
     if (isPlaying) {
-      // Pause everything
       if (audioRef.current) {
         audioRef.current.pause();
       }
       setIsPlaying(false);
+      if (onPause) onPause();
     } else {
       setCurrentIndex(0);
       setIsPlaying(true);

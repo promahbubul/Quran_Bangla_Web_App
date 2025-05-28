@@ -4,11 +4,13 @@ import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import router from "./routes";
 import SurahProvider from "./context/SurahProvider";
+import { AudioProvider } from "./context/AudioContext";
+
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  <AudioProvider>
     <SurahProvider>
       <RouterProvider router={router} />
     </SurahProvider>
-  </StrictMode>
+  </AudioProvider>
 );
