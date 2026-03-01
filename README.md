@@ -5,6 +5,7 @@ This is a complete Quran reading web application built using **React.js**. You c
 ## Live Demo
 
 👉 [https://bangla-quran.vercel.app/]
+👉 [https://bdquran.vercel.app/]
 
 ## Features
 
